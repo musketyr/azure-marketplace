@@ -615,7 +615,7 @@ supported by the last release. It's recommended to update to [Azure CLI 2.0](htt
 ```sh
 az group deployment create \
   --resource-group <name> \
-  --template-uri https://raw.githubusercontent.com/elastic/azure-marketplace/master/src/mainTemplate.json \
+  --template-uri https://raw.githubusercontent.com/musketyr/azure-marketplace/7.11/src/mainTemplate.json \
   --parameters @parameters/password.parameters.json
 ```
 
@@ -643,7 +643,7 @@ where `<name>` refers to the resource group you just created.
   $esVersion = "7.11.1"
 
   $clusterParameters = @{
-      "_artifactsLocation" = "https://raw.githubusercontent.com/elastic/azure-marketplace/$branch/src/"
+      "_artifactsLocation" = "https://raw.githubusercontent.com/musketyr/azure-marketplace/$branch/src/"
       "esVersion" = $esVersion
       "esClusterName" = "elasticsearch"
       "loadBalancerType" = "internal"
@@ -669,7 +669,7 @@ where `<name>` refers to the resource group you just created.
 5. Use our template directly from GitHub
 
   ```powershell
-  New-AzureRmResourceGroupDeployment -Name "<deployment name>" -ResourceGroupName "<name>" -TemplateUri "https://raw.githubusercontent.com/elastic/azure-marketplace/master/src/mainTemplate.json" -TemplateParameterObject $clusterParameters
+  New-AzureRmResourceGroupDeployment -Name "<deployment name>" -ResourceGroupName "<name>" -TemplateUri "https://raw.githubusercontent.com/musketyr/azure-marketplace/master/src/mainTemplate.json" -TemplateParameterObject $clusterParameters
   ```
 
 ## Targeting a specific template version
@@ -683,7 +683,7 @@ For example, to target the [`7.11.1` tag release with PowerShell](https://github
 
 ```powershell
 $templateVersion = "7.11.1"
-$_artifactsLocation = "https://raw.githubusercontent.com/elastic/azure-marketplace/$templateVersion/src/"
+$_artifactsLocation = "https://raw.githubusercontent.com/musketyr/azure-marketplace/$templateVersion/src/"
 
 # minimum parameters required to deploy
 $clusterParameters = @{
